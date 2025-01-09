@@ -1,14 +1,15 @@
 package com.kh.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
+import lombok.extern.java.Log;
+@Log
 @Controller
 public class HomeController {
-	
-	@RequestMapping(value = "/")
-	//reqeust mapping 5가지 get, post, put, delete, patch
-	public String home() {
-		return "home";
-	}
+	@GetMapping(value = "/ajaxHome2") 
+	public String formHome() { 
+	log.info("GET 방식 ajaxHome2"); 
+	return "ajaxHome2"; 
+	} 
 }

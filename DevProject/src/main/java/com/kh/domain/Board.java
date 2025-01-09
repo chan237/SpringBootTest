@@ -2,20 +2,13 @@ package com.kh.domain;
 
 import java.util.Date;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@RequiredArgsConstructor
-@ToString
-@EqualsAndHashCode(of="boardNo")
+
+@Data
+@Builder
 public class Board {
 
 	private int boardNo;
@@ -23,5 +16,6 @@ public class Board {
 	private String title;
 	@NonNull
 	private String content;
+	private String writer;
 	private Date regDate;
 }
