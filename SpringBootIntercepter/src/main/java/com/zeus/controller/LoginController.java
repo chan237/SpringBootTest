@@ -20,13 +20,18 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(Member member, Model model) {
+	public void login(String userId, String userPw, Model model) {
 		log.info("login");
 
-		log.info("login userId = " + member.getUserId());
-		log.info("login userPw = " + member.getUserPw());
-		model.addAttribute("result", "로그인 되었습니다.");
-		return "success";
+		log.info("login userId = " + userId);
+		log.info("login userPw = " + userPw);
+		Member member = new Member();
+		member.setUserId(userId);
+		member.setUserPw(userPw);
+		member.setUserName("제우스");
+		member.setEmail("zeus@zeus.com");
+
+		model.addAttribute("user", member);
 	}
 
 }
